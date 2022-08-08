@@ -53,10 +53,8 @@ exports.save = (req, res)=>{
                 );
                 res.redirect('/usuarios');
             });
-            
         }
     }
-
 }
 
 
