@@ -1,2 +1,2 @@
-1- colocar bien las rutas de articulo y categoria ejm: /articulo
+1- colocar bien las rutas de articulo y categoria ejm: /articulo - LISTO
 2- habilitar los roles admin, usuario
