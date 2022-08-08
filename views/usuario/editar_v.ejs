@@ -1,0 +1,78 @@
+<%- include('../header') %>
+
+<%- include('../categoria/contentWrapper_header') %>
+<% if( resul ) { %>
+  <div class="panel-body" id="formularioregistros">
+    <form action="/usuarios/update" name="formulario" id="formulario" method="POST" enctype="multipart/form-data">
+      
+      <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <label>Nombre(*):</label>
+        <input value="<%= resul.idusuario %>" type="hidden" name="idusuario" id="idusuario">
+        <input value="<%= resul.nombre %>" type="text" class="form-control" name="nombre" id="nombre" maxlength="100" placeholder="Nombre" required>
+      </div>
+      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <label>Tipo Documento(*):</label>
+        <select class="form-control select-picker" name="tipo_documento" id="tipo_documento" required>
+          <option value="DNI">DNI</option>
+          <option value="RUC">RUC</option>
+          <option value="CEDULA">CEDULA</option>
+        </select>
+      </div>
+      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <label>Número(*):</label>
+        <input value="<%= resul.num_documento %>" type="text" class="form-control" name="num_documento" id="num_documento" maxlength="20" placeholder="Documento" required>
+      </div>
+      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <label>Dirección:</label>
+        <input value="<%= resul.direccion %>" type="text" class="form-control" name="direccion" id="direccion" placeholder="Dirección" maxlength="70">
+      </div>
+      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <label>Teléfono:</label>
+        <input value="<%= resul.telefono %>" type="text" class="form-control" name="telefono" id="telefono" maxlength="20" placeholder="Teléfono">
+      </div>
+      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <label>Email:</label>
+        <input value="<%= resul.email %>" type="email" class="form-control" name="email" id="email" maxlength="50" placeholder="Email">
+      </div>
+      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <label>Cargo:</label>
+        <input value="<%= resul.cargo %>" type="text" class="form-control" name="cargo" id="cargo" maxlength="20" placeholder="Cargo">
+      </div>
+      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <label>Login (*):</label>
+        <input value="<%= resul.login %>" type="text" class="form-control" name="login" id="login" maxlength="20" placeholder="Login" required>
+      </div>
+      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <label>Clave (*):</label>
+        <input value="<%= resul.clave %>" type="password" class="form-control" name="clave" id="clave" maxlength="64" placeholder="Clave" required>
+      </div>
+      <!-- 
+      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <label>Permisos:</label>
+        <ul style="list-style: none;" id="permisos">
+          
+        </ul>
+      </div> -->
+  
+      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <label>Imagen:</label>
+        <input value="<%= resul.imagen %>" type="file" class="form-control" name="imagen" id="imagen" required>
+        <input type="hidden" name="imagenactual" id="imagenactual">
+        <img src="/usuarios/<%= resul.imagen %>" class="img-thumbnail" src="" width="150px" height="120px" id="imagenmuestra">
+      </div>
+  
+      <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <button class="btn btn-primary" type="submit" id="btnGuardar">
+          <i class="fa fa-save"></i> Guardar
+        </button>
+        <a href="/usuarios" class="btn btn-danger" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</a>
+      </div>
+    </form>
+  </div>
+<% } %>  
+
+<%- include('../categoria/contentWrapper_footer') %>
+<%- include('../footer') %>
+
+
+

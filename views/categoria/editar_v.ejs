@@ -1,0 +1,30 @@
+<%- include('../header') %>
+
+  <%- include('contentWrapper_header') %>
+  <% if( resul ) { %>
+  <div class="panel-body" id="formularioregistro" style="height: 400px;">
+    <form action="/categoria/update" name="formulario" id="formulario" method="post">
+      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <label> Nombre: </label>
+        <input  value="<%= resul.idcategoria %>" name="idcategoria" id="idcategoria" type="hidden">
+        <input value="<%= resul.nombre %>" type="text" class="form-control" name="nombre" id="nombre" required>
+      </div>
+
+      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <label>Descripción:</label>
+          <input value="<%= resul.descripcion %>" type="text" class="form-control" name="descripcion" id="descripcion" maxlength="256" placeholder="Descripción">
+      </div>
+
+      <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <button class="btn btn-primary" type="submit" id="btnGuardar">
+          <i class="fa fa-save"></i> Guardar                            
+        </button>
+
+        <a href="/categoria" type="button" class="btn btn-danger"><i class="fa fa-arrow-circle-left"> Cancelar </i></a>
+      </div>
+    </form>
+  </div>
+  <% } %>
+
+<%- include('contentWrapper_footer') %>
+<%- include('../footer') %>
