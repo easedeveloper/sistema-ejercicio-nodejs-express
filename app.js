@@ -11,7 +11,7 @@ app.use(express.static(__dirname + '/views'))
 app.use(express.static(__dirname + '/files'))
 app.use('/categoria', require('./routes/categorias.routes'));
 app.use('/articulo',  require('./routes/articulos.routes'));
-//app.use('/ingreso',   require('./routes/ingresos.routes'));
+app.use('/proveedor', require('./routes/proveedor.routes'));
 app.use('/usuarios',  require('./routes/usuarios.routes'));
 
 
